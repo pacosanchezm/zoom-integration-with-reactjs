@@ -34,7 +34,7 @@ const Zoom = ({meetConfig, isSubmitted}) => {
     if(isSubmitted.status) {
       // setZoomJSLib version 1.8.1 caused breaking, must be same as installed package verision
       // installing this of version 1.7.x caused breaking
-      ZoomMtg.setZoomJSLib("https://source.zoom.us/1.8.1/lib", "/av");
+      ZoomMtg.setZoomJSLib("https://source.zoom.us/1.9.5/lib", "/av");
       ZoomMtg.preLoadWasm();
       ZoomMtg.prepareJssdk();
   
@@ -57,6 +57,19 @@ const Zoom = ({meetConfig, isSubmitted}) => {
           }, 1000);
         },
       });
+
+      ZoomMtg.showMeetingHeader({
+        show: false
+       });
+
+       ZoomMtg.showInviteFunction({
+        show: false
+      });
+
+
+
+
+
     }
 
   }, [meetConfig, isSubmitted]);

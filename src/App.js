@@ -3,6 +3,10 @@ import Form from "./form/Form";
 import useStyles from "./hook/UseStyles";
 import Zoom from "./zoom/Zoom";
 
+
+
+
+
 const API_KEYS = {
   apiKey: process.env.REACT_APP_ZOOM_API_KEY,
   apiSecret: process.env.REACT_APP_ZOOM_API_SECRET_KEY,
@@ -20,16 +24,16 @@ console.log("PATH ::", PATH);
 const zoomConfig = {
   apiKey: API_KEYS.apiKey, // can create from here https://marketplace.zoom.us/
   apiSecret: API_KEYS.apiSecret, // can create from here https://marketplace.zoom.us/
-  meetingNumber: "",
+  meetingNumber: "88087656069",
   // meeting id generated when schedule a meeting in https://zoom.us/meeting/schedule
   // !!warning
   // meetingNumber must not have white space between numbers
   // 518 306 2219 - bad format
   // 5183062219 - good format
   leaveUrl: "https://zoom.us/",
-  userName: "", // (required)
+  userName: "javiere", // (required)
   userEmail: "", // (optional) must be the attendee email address
-  passWord: "",
+  passWord: "743340",
   // !!warning, this is the passcode for meeting room, not for user password
   role: 0, // 0 for guest, 1 for host
 };
@@ -63,7 +67,13 @@ const App = () => {
   useStyles(stylePath);
 
   return (
+
+
+
     <>
+      <link rel="manifest" href="/manifest.json" crossOrigin="Access-Control-Allow-Origin"/>
+
+
       <Form
         handleSubmit={handleSubmit}
         handleChange={handleChange}
